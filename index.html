@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Vision Classifier</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <h1>AI Vision Classifier</h1>
+                </div>
+                <p class="subtitle">By เด็ก Data Sci ตัวตึง</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <button id="startBtn" class="start-btn" onclick="init()">
+                    <i class="fas fa-play"></i>
+                    <span>Start Camera</span>
+                </button>
+                <div class="status-indicator">
+                    <div id="statusDot" class="status-dot"></div>
+                    <span id="statusText">Ready to start</span>
+                </div>
+            </div>
+
+            <!-- Camera and Results Section -->
+            <div class="camera-section">
+                <!-- Webcam Container -->
+                <div class="webcam-wrapper">
+                    <div class="webcam-header">
+                        <i class="fas fa-camera"></i>
+                        <h3>Live Camera Feed</h3>
+                    </div>
+                    <div id="webcam-container" class="webcam-container">
+                        <div class="placeholder">
+                            <i class="fas fa-camera-slash"></i>
+                            <p>Camera not active</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Container -->
+                <div class="results-wrapper">
+                    <div class="results-header">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>Classification Results</h3>
+                    </div>
+                    <div id="label-container" class="label-container">
+                        <div class="placeholder">
+                            <i class="fas fa-info-circle"></i>
+                            <p>Start the camera to see predictions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Panel -->
+            <div class="info-panel">
+                <div class="info-card">
+                    <h4><i class="fas fa-lightbulb"></i> How it works</h4>
+                    <p>This AI model analyzes live camera feed and classifies objects in real-time using machine learning.</p>
+                </div>
+                <div class="info-card">
+                    <h4><i class="fas fa-cog"></i> Model Info</h4>
+                    <p>Custom trained model with <span id="classCount">0</span> classes</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 AI Vision Classifier. Built with TensorFlow.js and Teachable Machine.</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
